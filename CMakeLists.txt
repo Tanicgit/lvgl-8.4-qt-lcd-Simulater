@@ -63,12 +63,14 @@ endif()
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lvgl)
 
 # 可执行文件
+file(GLOB UI_SOURCES "ui/*.cpp")
 add_executable(${PROJECT_NAME}
     linux/main.cpp
     linux/lv_port_disp.c
     linux/lv_port_indev.cpp
     ui/page_main.cpp
     # 其他源文件
+	${UI_SOURCES}
 )
 
 # 链接 LVGL 库
